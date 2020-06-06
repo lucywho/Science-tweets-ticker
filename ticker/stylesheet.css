@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: antiquewhite;
+    font-family: "Titillium Web", sans-serif;
+}
+a {
+    font-size: 30px;
+    font-weight: bold;
+    color: #1f1a38;
+    text-decoration: none;
+}
+
+#ticker {
+    overflow: hidden;
+    height: 15vh;
+    width: 100%;
+    position: relative;
+    padding: 5px;
+}
+
+#headlines {
+    white-space: nowrap;
+    position: absolute;
+    left: 100%;
+    margin-top: 20px;
+}
+
+#headlines a {
+    padding: 20px 30px;
+}
+
+#explanation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 75vh;
+    text-align: center;
+    color: #1f1a38;
+    padding: 20px;
+    background-image: linear-gradient(antiquewhite, #db5461);
+}
+
+#explanation p {
+    font-size: 20px;
+}
