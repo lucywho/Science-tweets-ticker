@@ -40,4 +40,6 @@ app.get("/data.json", (req, res) => {
         });
 });
 
-app.listen(8080, () => console.log("proms twitter ticker server running"));
+//app.listen(8080, () => console.log("proms twitter ticker server running"));
+
+app.listen(process.env.PORT || 8080);
