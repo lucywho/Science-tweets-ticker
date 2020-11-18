@@ -5,7 +5,12 @@ $.ajax({
         var myHtml = "";
         for (var i = 0; i < links.length; i++) {
             var content =
-                "<a href=" + links[i].url + ">" + links[i].text + "</a>";
+                "<a href=" +
+                links[i].url +
+                " " +
+                "target='_blank' >" +
+                links[i].text +
+                "</a>";
             myHtml += content;
         }
 

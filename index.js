@@ -32,14 +32,16 @@ app.get("/data.json", (req, res) => {
 
                     res.json(filteredTweets);
                 })
-                .catch((err) => console.log("error: ", err));
+                .catch((err) =>
+                    console.log("index.js, error in sorted tweets: ", err)
+                );
         })
         .catch((err) => {
-            console.log("error in getToken: ", err);
+            console.log("index.js, error in getToken: ", err);
             res.sendStatus(500);
         });
 });
 
-//app.listen(8080, () => console.log("proms twitter ticker server running"));
-
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 8080, () =>
+    console.log("twitter ticker server running")
+);

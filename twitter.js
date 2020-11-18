@@ -1,8 +1,8 @@
 const https = require("https");
-const { consumerKey, consumerSecret } = require("./secrets.json");
+const { API_key, API_secret_key } = require("./secrets.json");
 
 module.exports.getToken = (callback) => {
-    let creds = `${consumerKey}:${consumerSecret}`;
+    let creds = `${API_key}:${API_secret_key}`;
     let encodedCreds = Buffer.from(creds).toString("base64");
 
     const options = {
@@ -17,7 +17,10 @@ module.exports.getToken = (callback) => {
 
     const cb = function(response) {
         if (response.statusCode != 200) {
-            console.log("response status", response.statusCode);
+            console.log(
+                "twitter.js, cb response status: ",
+                response.statusCode
+            );
         }
         let body = "";
         response.on("data", (chunk) => {
@@ -47,10 +50,7 @@ module.exports.getTweets = (bearerToken, twitterName, callback) => {
 
     const cb2 = function(response) {
         if (response.statusCode != 200) {
-            console.log(
-                "twitter.js: getTweets resp status",
-                response.statusCode
-            );
+            console.log("twitter.js, cb2 resp status: ", response.statusCode);
             callback(response.statusCode);
         }
 
