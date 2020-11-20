@@ -4,7 +4,8 @@
     "description": "Science Twitter Ticker",
     "main": "index.js",
     "engines": {
-        "node": "10.19.0"
+        "node": "10.19.0",
+        "npm": "6.14.8"
     },
     "scripts": {
         "start": "node index.js",

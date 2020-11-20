@@ -5,7 +5,7 @@ module.exports.getToken = (callback) => {
     let creds;
 
     if (process.env.NODE_ENV == "production") {
-        creds = process.env.API_key;
+        creds = `${process.env.API_key}:${process.env.API_secret_key}`;
     } else {
         creds = `${API_key}:${API_secret_key}`;
     }
