@@ -23,7 +23,6 @@ $.ajax({
         anim = requestAnimationFrame(moveHeadlines);
 
         $("#headlines a").on("mouseover", function mouseOn(event) {
-            console.log("mouseover detected");
             $(event.target).css({
                 color: "#db5461",
                 textDecoration: "underline",
