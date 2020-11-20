@@ -1,5 +1,4 @@
 const https = require("https");
-const { API_key, API_secret_key } = require("./secrets.json");
 
 module.exports.getToken = (callback) => {
     let creds;
@@ -7,6 +6,7 @@ module.exports.getToken = (callback) => {
     if (process.env.NODE_ENV == "production") {
         creds = `${process.env.API_key}:${process.env.API_secret_key}`;
     } else {
+        const { API_key, API_secret_key } = require("./secrets.json");
         creds = `${API_key}:${API_secret_key}`;
     }
 
