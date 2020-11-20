@@ -2,7 +2,14 @@ const https = require("https");
 const { API_key, API_secret_key } = require("./secrets.json");
 
 module.exports.getToken = (callback) => {
-    let creds = `${API_key}:${API_secret_key}`;
+    let creds;
+
+    if (process.env.NODE_ENV == "production") {
+        creds = process.env.API_key;
+    } else {
+        creds = `${API_key}:${API_secret_key}`;
+    }
+
     let encodedCreds = Buffer.from(creds).toString("base64");
 
     const options = {
